@@ -32,6 +32,7 @@ class OccupantTest {
     @Test
     void noStartSquare() {
         // TODO
+        assertThat(unit.hasSquare()).isEqualTo(false);
     }
 
     /**
@@ -41,6 +42,9 @@ class OccupantTest {
     @Test
     void testOccupy() {
         // TODO
+        Square targetSquare = new BasicSquare();
+        unit.occupy(targetSquare);
+        assertThat(unit.getSquare()).isEqualTo(targetSquare);
     }
 
     /**
@@ -50,5 +54,9 @@ class OccupantTest {
     @Test
     void testReoccupy() {
         // TODO
+        Square targetSquare = new BasicSquare();
+        unit.occupy(targetSquare);
+        unit.occupy(targetSquare);
+        assertThat(unit.getSquare()).isEqualTo(targetSquare);
     }
 }
